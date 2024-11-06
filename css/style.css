@@ -1,0 +1,305 @@
+style
+body {
+  
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  
+  
+}
+
+main{
+  display: block;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  background-color:hidden;
+}
+
+
+.facade{
+  font-family: 'FacadeGX';/*on réutilise le nom choisi au sein du fichier font_liste.css*/
+}
+
+
+
+
+.fungal{
+  font-family: 'FungalGX';
+}
+
+
+
+
+main{
+  display: block;
+  position: relative;
+  width: 1700px;
+  overflow-x:hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+
+#shape0{
+  
+  font-family : 'FacadeGX';
+  font-size : 300px;
+  
+ 
+}
+#shape1{
+  
+  font-family : 'FacadeGX';
+  font-size : 100px;
+}
+
+#shape2{
+  
+  font-family : 'FungalGX';
+  font-size : 400px;
+}
+
+#shape3{
+  
+  font-family : 'FungalGX';
+  font-size : 300px;
+}
+
+
+
+/* Animation Vroom qui arrive de la gauche */
+@keyframes moveFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*Animation Vroom qui arrive de la droite */
+@keyframes moveFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animation  Bang apparition */
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.vroom {
+  font-size: 100px;
+  position: absolute;
+  top: 190vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.vroom-left {
+  animation: moveFromLeft 2.5s  infinite;
+  font-family: "FacadeGX";
+}
+
+.vroom-right {
+  animation: moveFromRight 2.5s infinite;
+  font-family: "FacadeGX";
+}
+
+
+.bang {
+  top: 190vh;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  position:relative;
+  font-family: 'FungalGX';
+  font-variation-settings: "grow" 250, "THCK" 700; /* Initial values */
+  font-size: 174px;
+  color: red;
+  position: absolute;
+  opacity: 0; /* Hidden initially */
+  animation: popIn 3.5s infinite , fontGrow 1s ease-in-out forwards; /* New animation for font weight/thickness */
+  animation-delay: 1.5s; /* Appears after the collision */
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+/* animation  Bang qui pop */
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  
+  main{
+   display: block;
+   position: relative;
+   width: 1700px;
+   overflow-x:hidden;
+   background-color: rgb(255, 255, 255);
+  }
+  
+
+
+}
+  .container {
+    position: relative;
+    height: 400vh; 
+    text-align: center;
+    overflow: hidden;
+  }
+    /*  Ploc qui tombe */
+    @keyframes fall {
+      0% {
+        top: 80vh;
+        opacity: 1;
+      }
+      90% {
+        top: 370vh;
+        opacity: 1;
+      }
+      100% {
+        top: 370vh;
+        opacity: 0;
+      }
+    }
+    
+   /* changement de couleurs smash */
+  @keyframes colorChange {
+    0%, 80% {
+      color: red;
+    }
+    81%, 100% {
+      color: black;
+    }
+  }
+  
+ 
+  .ploc {
+    position: absolute;
+    top: -10vh; 
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    animation: fall 5s ease-in forwards infinite;
+    font-family:'FungalGX';
+    font-variation-settings: 'grow' 500, 'THCK' 500; 
+  }
+  .smash-text {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    animation: colorChange 5s ease-in forwards infinite;
+    animation-delay: 0s; 
+  }
+  
+
+
+  
+  
+.path-style {
+  fill: none;
+  stroke-width: 9.6;
+}
+
+
+
+h2 {
+  font-size: 200px;
+  color: blue;
+  transform: rotate(10deg);
+}
+
+#premier {
+  position: relative;
+  color: rgb(4, 127, 25);
+  transform: rotate(10deg);
+  z-index: 1;
+}
+
+#deuxieme {
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+/* chaque courbes spécifique de l'anim svg */
+#path0-text {
+  
+  font-size: 70px;
+  fill:none;
+  animation: moveAlongPath0 5s linear infinite;
+  font-family: "FacadeGX";
+}
+
+#path1-text {
+  font-size: 60px;
+  fill: none;
+  animation: moveAlongPath1 4s linear infinite;
+  font-family: "FungalGX";
+  
+}
+
+#path2-text {
+  font-size: 100px;
+  fill:none;
+  animation: moveAlongPath2 6s linear infinite;
+  font-family: "FacadeGX";
+}
+
+
+@keyframes moveAlongPath0 {
+  0% { startOffset: 0%; }
+  100% { startOffset: 100%; }
+}
+
+@keyframes moveAlongPath1 {
+  0% { startOffset: 0%; }
+  100% { startOffset: 100%; }
+}
+
+@keyframes moveAlongPath2 {
+  0% { startOffset: 0%; }
+  100% { startOffset: 100%; }
+}
